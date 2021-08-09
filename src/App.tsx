@@ -1,10 +1,13 @@
 import React from 'react';
-import './App.css';
+import { GlobalStyle } from './components/shared';
 import { HomePage } from './pages';
 
 function App() {
   return (
-   <HomePage />
+    <>
+      <GlobalStyle />
+      <HomePage />
+    </>
   )
 }
 

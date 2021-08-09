@@ -1,3 +1,4 @@
+import Shelf from "./shelf";
 import Volume from "./volume";
 
-export {Volume}
+export { Volume, Shelf }
