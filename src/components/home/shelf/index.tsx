@@ -16,7 +16,7 @@ const Shelf: React.FC<Props>  = (props: Props): JSX.Element => {
         {props.title}
       </TitleHeading>
 
-      <Container>
+      <Container className={props.isFeatured ? 'is-featured' : ''}>
         {props.children}
       </Container>
     </Wrapper>

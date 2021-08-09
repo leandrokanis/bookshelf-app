@@ -1,4 +1,4 @@
 import Shelf from "./shelf";
-import Volume from "./volume";
+import BookItem from "./book-item";
 
-export { Volume, Shelf }
+export { BookItem, Shelf }

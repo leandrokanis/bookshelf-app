@@ -1,20 +1,20 @@
 import faker from 'faker'
 import { Volume } from '../volume'
 
-export const mockAddress = (): Volume => {
+export const mockVolume = (): Volume => {
   return {
-    kind: faker.datatype.string(),
-    id: faker.datatype.string(),
-    etag: faker.datatype.string(),
-    selfLink: faker.datatype.string(),
+    kind: faker.lorem.word(),
+    id: faker.lorem.word(),
+    etag: faker.lorem.word(),
+    selfLink: faker.lorem.word(),
     volumeInfo: {
-      title: faker.datatype.string(),
-      subtitle: faker.datatype.string(),
-      publishedDate: faker.datatype.string(),
+      title: faker.lorem.words(4),
+      subtitle: faker.lorem.word(),
+      publishedDate: faker.lorem.word(),
       industryIdentifiers: [
         {
-          type: faker.datatype.string(),
-          identifier: faker.datatype.string(),
+          type: faker.lorem.word(),
+          identifier: faker.lorem.word(),
         },
       ],
       readingModes: {
@@ -22,47 +22,47 @@ export const mockAddress = (): Volume => {
         image: faker.datatype.boolean(),
       },
       pageCount: faker.datatype.number(),
-      printType: faker.datatype.string(),
-      categories: [faker.datatype.string()],
-      maturityRating: faker.datatype.string(),
+      printType: faker.lorem.word(),
+      categories: [faker.lorem.word()],
+      maturityRating: faker.lorem.word(),
       allowAnonLogging: faker.datatype.boolean(),
-      contentVersion: faker.datatype.string(),
+      contentVersion: faker.lorem.word(),
       panelizationSummary: {
         containsEpubBubbles: faker.datatype.boolean(),
         containsImageBubbles: faker.datatype.boolean(),
       },
       imageLinks: {
         smallThumbnail: faker.system.commonFileName(),
-        thumbnail: faker.datatype.string(),
+        thumbnail: faker.image.image(),
       },
-      language: faker.datatype.string(),
-      previewLink: faker.datatype.string(),
-      infoLink: faker.datatype.string(),
-      canonicalVolumeLink: faker.datatype.string(),
+      language: faker.lorem.word(),
+      previewLink: faker.lorem.word(),
+      infoLink: faker.lorem.word(),
+      canonicalVolumeLink: faker.lorem.word(),
     },
     saleInfo: {
-      country: faker.datatype.string(),
-      saleability: faker.datatype.string(),
+      country: faker.lorem.word(),
+      saleability: faker.lorem.word(),
       isEbook: faker.datatype.boolean(),
     },
     accessInfo: {
-      country: faker.datatype.string(),
-      viewability: faker.datatype.string(),
+      country: faker.lorem.word(),
+      viewability: faker.lorem.word(),
       embeddable: faker.datatype.boolean(),
       publicDomain: faker.datatype.boolean(),
-      textToSpeechPermission: faker.datatype.string(),
+      textToSpeechPermission: faker.lorem.word(),
       epub: {
         isAvailable: faker.datatype.boolean(),
       },
       pdf: {
         isAvailable: faker.datatype.boolean(),
       },
-      webReaderLink: faker.datatype.string(),
-      accessViewStatus: faker.datatype.string(),
+      webReaderLink: faker.lorem.word(),
+      accessViewStatus: faker.lorem.word(),
       quoteSharingAllowed: faker.datatype.boolean(),
     },
     searchInfo: {
-      textSnippet: faker.datatype.string(),
+      textSnippet: faker.lorem.word(),
     },
   }
 }

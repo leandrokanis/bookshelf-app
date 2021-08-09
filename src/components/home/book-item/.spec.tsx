@@ -1,13 +1,14 @@
 import { shallow, ShallowWrapper } from 'enzyme'
-import Volume from '.'
+import BookItem from '.'
+import { mockVolume } from '../../../models/mocks'
 
 
-describe('Volume', (): void => {
+describe('BookItem', (): void => {
   let wrapper: ShallowWrapper
 
   beforeEach((): void => {
     wrapper = shallow(
-      <Volume />,
+      <BookItem volume={mockVolume()} />,
     )
   })
 

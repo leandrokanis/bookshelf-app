@@ -10,10 +10,18 @@ export const Wrapper = styled.div`
     padding: 26px 17px;
     margin-left: -17px;
     margin-right: -17px;
-
+    
     color: #FFFFFF;
   }
 `
 
 export const Container = styled.div`
+  display: flex;
+  color: #595A5C;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  
+  &.is-featured {
+    color: #FFFFFF;
+  }
 `

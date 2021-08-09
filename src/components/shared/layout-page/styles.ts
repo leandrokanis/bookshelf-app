@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   left: 0;
   right: 0;
   height: calc(100vh - 56px);
+  overflow-x: clip;
 
   scrollbar-width: thin;
   scrollbar-color: #CCCCCC transparent;

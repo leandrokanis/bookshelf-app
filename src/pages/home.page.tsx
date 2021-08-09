@@ -1,7 +1,8 @@
 import React from 'react'
-import { Shelf, Volume } from '../components/home'
+import { Shelf, BookItem } from '../components/home'
 import { Topbar } from '../components/shared'
 import LayoutPage from '../components/shared/layout-page'
+import { mockVolume } from '../models/mocks'
 
 const HomePage: React.FC = (): JSX.Element => {
   return (
@@ -12,37 +13,40 @@ const HomePage: React.FC = (): JSX.Element => {
         <>
           <Shelf title="Aventura">
             <>
-              <Volume />
-              <Volume />
-              <Volume />
-              <Volume />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
             </>
           </Shelf>
 
           <Shelf title="Infantil">
             <>
-              <Volume />
-              <Volume />
-              <Volume />
-              <Volume />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
             </>
           </Shelf>
 
           <Shelf title="Destaque" isFeatured>
             <>
-              <Volume />
-              <Volume />
-              <Volume />
-              <Volume />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
             </>
           </Shelf>
 
           <Shelf title="Acao">
             <>
-              <Volume />
-              <Volume />
-              <Volume />
-              <Volume />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
+              <BookItem volume={mockVolume()} />
             </>
           </Shelf>
         </>
