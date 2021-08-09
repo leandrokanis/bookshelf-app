@@ -1,1 +1,1 @@
-export const VOLUMES = '/volumes'
+export const VOLUMES = 'v1/volumes'

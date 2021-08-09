@@ -1,4 +1,6 @@
 import React from 'react'
+import { BookItem } from '..'
+import { Volume } from '../../../models'
 import { TitleHeading } from '../../shared'
 import { Container, Wrapper } from './styles'
 
@@ -6,7 +8,7 @@ import { Container, Wrapper } from './styles'
 interface Props {
   isFeatured?: boolean
   title: string
-  children: JSX.Element
+  volumes: Volume[]
 }
 
 const Shelf: React.FC<Props>  = (props: Props): JSX.Element => {
@@ -17,7 +19,12 @@ const Shelf: React.FC<Props>  = (props: Props): JSX.Element => {
       </TitleHeading>
 
       <Container className={props.isFeatured ? 'is-featured' : ''}>
-        {props.children}
+        {
+          props.volumes.map((volume, key) => {
+            return <BookItem volume={volume} key={key} />
+          }
+          )
+        }
       </Container>
     </Wrapper>
   )

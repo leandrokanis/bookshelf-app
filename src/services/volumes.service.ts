@@ -12,29 +12,30 @@ const actions = {
 }
 
 const hooks = {
-  useList(): { volumes: Volume[]; updateVolumes: Function } {
+  useList(params?: IQueryParams): [volumes: Volume[], updateVolumes: Function] {
     const [volumes, setVolumes] = useState<Volume[]>([])
 
-    useEffect(() => {}, [])
-
+    useEffect(() => {
+      updateVolumes(params)
+    }, [])
+    
     function updateVolumes(params?: IQueryParams): Promise<Volume[]> {
-      return new Promise((resolve, reject) => {
+      return new Promise(async (resolve, reject) => {
         VolumesApi.list(params)
           .then((response: AxiosResponse) => {
-            resolve(actions.createMultiple(response.data))
+            const nextVolumes = actions.createMultiple(response?.data)
+            setVolumes(nextVolumes)
+            resolve(nextVolumes)
           })
           .catch(reject)
       })
     }
 
-    return {
-      volumes,
-      updateVolumes,
-    }
+    return [ volumes, updateVolumes ]
   },
 }
 
-export const AdministratorService = {
+export const VolumesService = {
   ...actions,
   ...hooks,
 }

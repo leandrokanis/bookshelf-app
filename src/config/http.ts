@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios'
 import qs from 'qs'
 
 let instance = axios.create({
-  baseURL: `${process.env.API_URL}`,
+  baseURL: `https://www.googleapis.com/books/`,
   paramsSerializer: function (params) {
     return qs.stringify(params, { indices: false })
   },
@@ -10,7 +10,7 @@ let instance = axios.create({
 
 function parseBody(response: AxiosResponse<any>) {
   if (response.status === 200 || response.status === 201) {
-    return response.data
+    return response
   } else {
     return response.data?.messages
   }
