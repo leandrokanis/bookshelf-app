@@ -8,7 +8,7 @@ import { Container, Wrapper } from './styles'
 interface Props {
   isFeatured?: boolean
   title: string
-  volumes: Volume[]
+  volumes: Volume[] | null
 }
 
 const Shelf: React.FC<Props>  = (props: Props): JSX.Element => {
@@ -20,7 +20,7 @@ const Shelf: React.FC<Props>  = (props: Props): JSX.Element => {
 
       <Container className={props.isFeatured ? 'is-featured' : ''}>
         {
-          props.volumes.map((volume, key) => {
+          props.volumes?.map((volume, key) => {
             return <BookItem volume={volume} key={key} />
           }
           )

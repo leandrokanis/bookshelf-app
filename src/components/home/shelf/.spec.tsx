@@ -1,6 +1,7 @@
 import { shallow, ShallowWrapper } from 'enzyme'
 import faker from 'faker'
 import Shelf from '.'
+import { mockVolume } from '../../../models/mocks'
 
 
 describe('Shelf', (): void => {
@@ -10,6 +11,7 @@ describe('Shelf', (): void => {
     wrapper = shallow(
       <Shelf
         title={faker.lorem.sentence()}
+        volumes={[mockVolume()]}
       >
         <></>
       </Shelf>,

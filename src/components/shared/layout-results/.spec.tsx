@@ -1,16 +1,13 @@
 import { shallow, ShallowWrapper } from 'enzyme'
-import Topbar from '.'
+import LayoutResults from '.'
 
 
-describe('Topbar', (): void => {
+describe('LayoutResults', (): void => {
   let wrapper: ShallowWrapper
 
   beforeEach((): void => {
     wrapper = shallow(
-      <Topbar
-        onGoBack={() => {}}
-        onSearch={() => {}}
-      />,
+      <LayoutResults><></></LayoutResults>,
     )
   })
 

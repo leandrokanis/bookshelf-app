@@ -5,18 +5,19 @@ import { ApiData, IQueryParams } from '../config/types'
 import { Volume } from '../models'
 
 const actions = {
-  createMultiple(data: ApiData<Volume>): Volume[] {
-    if (!data) return []
+  createMultiple(data: ApiData<Volume>): Volume[] | null {
+    if (!data) return null
     return data.items
   },
 }
 
 const hooks = {
-  useList(params?: IQueryParams): [volumes: Volume[], updateVolumes: Function] {
-    const [volumes, setVolumes] = useState<Volume[]>([])
+  useList(params?: IQueryParams | null): [volumes: Volume[] | null, updateVolumes: Function] {
+    const [volumes, setVolumes] = useState<Volume[] | null>(null)
 
     useEffect(() => {
-      updateVolumes(params)
+      if(params) updateVolumes(params)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
     function updateVolumes(params?: IQueryParams): Promise<Volume[]> {
@@ -24,8 +25,8 @@ const hooks = {
         VolumesApi.list(params)
           .then((response: AxiosResponse) => {
             const nextVolumes = actions.createMultiple(response?.data)
-            setVolumes(nextVolumes)
-            resolve(nextVolumes)
+            setVolumes(nextVolumes as Volume[])
+            resolve(nextVolumes as Volume[])
           })
           .catch(reject)
       })
